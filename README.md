@@ -28,7 +28,9 @@ $$
 
 首轮教材包含首页、[循环群首章](chapters/cyclic-groups.qmd)、[数学事件索引](events.qmd)与[文献](references.bib)。首章从交互钟表出发，给出 Bézout 引理、轨道长度公式、循环群子群分类、素数阶单性及 $\mu(C_p)=p$ 的证明，并附六道练习与答案。
 
-**在线阅读：[The Natural Curriculum](https://ye-chern.github.io/natural-curriculum/)** · [自动构建记录](https://github.com/Ye-Chern/natural-curriculum/actions/workflows/book.yml)
+**教材发布地址：[The Natural Curriculum](https://ye-chern.github.io/natural-curriculum/)** · [自动构建记录](https://github.com/Ye-Chern/natural-curriculum/actions/workflows/book.yml)
+
+2026-10-20 首次交接：本地构建和测试已通过；GitHub 官方 Actions／Pages 故障期间，首次云端验收和上线仍在等待。最新事实以工作流和[研究状态](research/state.md)为准；首次部署成功前发布地址可能返回 404。
 
 已进行 GPT-6 Luna 的独立数学文本审读与 Gemini 的教学质疑；这些不替代真实初学者试读或正式数学审稿。[研究状态](research/state.md)保留验证结果、取舍与下一步问题。后续参与者请先读 [AGENTS.md](AGENTS.md)。
 

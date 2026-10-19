@@ -22,7 +22,11 @@
 - Node 算术检查全部通过：25,956 组界面允许参数；独立枚举 n≤12 的所有子集核对子群名单。有限计算只是实现验收，正文另有一般证明。
 - 桌面与手机 14 项浏览器检查全部通过（最终一轮约 1.2 分钟，含第二圈轨迹回归断言）；初轮发现本地 IP 地址被“外链另开窗口”误判，已删除此非必要设置。
 - 测试服务使用独立端口和 Python 标准库。Windows 并发加载暴露默认服务器仅 5 个排队连接而拒绝脚本请求的问题；保留页面脚本异常检查，将测试服务队列改为 128 后完整验收通过。
-- Pages 已通过 API 配置为 Actions 部署；Linux 构建、容器验收及公网发布将在推送后以实际工作流确认。
+- Quarto 自带预览实际启动，章节请求返回 HTTP 200；本机预览入口为 `http://localhost:4202/`。
+- 实现提交：[3d010fa](https://github.com/Ye-Chern/natural-curriculum/commit/3d010faf4e0bcdaf67406b45a3d3507abdac3de8)，已成功推送 `main`。
+- Pages 已通过 API 配置为 Actions 部署。**2026-10-20 本轮交接时，云端尚未验证成功**：[教材构建与部署](https://github.com/Ye-Chern/natural-curriculum/actions/workflows/book.yml)和[容器验收](https://github.com/Ye-Chern/natural-curriculum/actions/workflows/environment.yml)均已触发，仍排队且没有运行步骤。
+- GitHub 官方报告 [Actions、Pages、Webhooks 服务故障](https://www.githubstatus.com/incidents/8tzbpcnl75jp)，明确提示工作流和网站构建可能延迟。作为独立路径，已尝试创建 2 核 Codespace，API 返回 HTTP 429，未创建工作区；未变更计费设置，也未留下运行中的云实例。没有把静态配置或排队当作云端实测通过。
+- 恢复后的第一动作：查看上述两条工作流；若失败，读具体步骤日志并修正；若通过，再访问 Pages 的章节页验证交互、资源路径和引用。无需重新克隆、重写首章或重复已通过的本地验证。
 - 凭据、缓存和副agent原始记录在仓库外，生成的 `_book/` 不入 Git。
 
 ## 接下来要回答的数学与教学问题
