@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cyclic-orbit-splitting",
+    "kind": "衍生的算术／组合现象（不是新增单群）",
+    "parameter": "钟面格数 n≥1；第一次出现非平凡真子群为 n=4",
+    "object": "一步跳跃怎样分裂成短轨道",
+    "evidence": "步长 k 的轨道长度为 n/gcd(n,k)。n=1 无非平凡子群；n=2、3 为素数；n=4 时 〈2〉={0,2} 是非平凡真子群。因此最早出现于 4；一般真子群由 n 的约数完整控制。",
+    "status": "proved",
+    "chapter": "chapters/cyclic-groups.qmd",
+    "anchor": "sec-subgroups",
+    "dependencies": "子群分类及首次性直接依赖带余除法；相关轨道公式另依赖正文证明的 Bézout 引理"
+  },
+  {
+    "id": "prime-cyclic-simple",
+    "kind": "单群家族及其最小指数",
+    "parameter": "n=p，p 为素数；最小值 n=2",
+    "object": "素数阶循环群 C_p，μ(C_p)=p",
+    "evidence": "循环群中所有子群正规；子群分类给出 C_n 单当且仅当 n 为素数。C_p 唯一的真子群为 {0}，有 p 个陪集，故 μ(C_p)=p。任意真子群至少有两个陪集，故单群最小指数不可能小于 2，C_2 实现此下界。本条不声称分类所有最小指数大于 2 的单群。",
+    "status": "proved",
+    "chapter": "chapters/cyclic-groups.qmd",
+    "anchor": "sec-simple",
+    "dependencies": "本章循环群子群分类、交换群的正规性、陪集定义"
+  }
+]

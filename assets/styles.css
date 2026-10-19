@@ -1,0 +1,55 @@
+:root {
+  --nc-ink: #203d35;
+  --nc-accent: #23654d;
+  --nc-paper: #fcfbf7;
+  --nc-rule: #d7ddd4;
+  --bs-link-color: #23654d;
+  --bs-link-hover-color: #173e30;
+}
+body { background: var(--nc-paper); color: #28352e; font-family: system-ui, "Microsoft YaHei", sans-serif; line-height: 1.9; }
+h1, h2, h3, .sidebar-title { color: var(--nc-ink); font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif; }
+h1 { line-height: 1.4; }
+h2 { margin-top: 2.6rem; }
+p { margin-bottom: 1.1rem; }
+.subtitle { color: #526259; }
+.chapter-intro { border-left: 3px solid var(--nc-accent); padding: .4rem 1.2rem; margin: 1.8rem 0; }
+.chapter-intro p:last-child { margin-bottom: 0; }
+.callout { background: #f5f6f0; }
+.sidebar { background: var(--nc-paper); }
+.clock-lab { border: 1px solid var(--nc-rule); padding: 1.4rem; margin: 1.8rem 0; border-radius: 4px; }
+.clock-lab h3 { margin-top: 0; }
+.clock-controls { display: flex; flex-wrap: wrap; align-items: end; gap: .8rem 1.2rem; }
+.clock-controls label { display: flex; flex-direction: column; font-size: .95rem; font-weight: 600; }
+.clock-controls input { width: 7rem; padding: .35rem .6rem; background: white; border: 1px solid #7b8e80; border-radius: 3px; font: inherit; }
+.clock-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.clock-actions button { padding: .4rem .85rem; border: 1px solid var(--nc-accent); background: transparent; color: var(--nc-ink); border-radius: 3px; font: inherit; cursor: pointer; }
+.clock-actions button:first-child { background: var(--nc-accent); color: white; }
+.clock-actions button:disabled { opacity: .45; cursor: default; }
+.clock-lab :focus-visible { outline: 3px solid #a55719; outline-offset: 3px; }
+.clock-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.3rem; align-items: center; }
+.clock-svg { display: block; width: 100%; max-width: 360px; margin: .5rem auto; aspect-ratio: 1; }
+.clock-rim { fill: none; stroke: var(--nc-rule); stroke-width: 2; }
+.clock-point { fill: var(--nc-paper); stroke: #647c6e; stroke-width: 2; }
+.clock-point.visited { fill: var(--nc-accent); }
+.clock-point.current { fill: #a55719; stroke: #6d370d; stroke-width: 2; }
+.clock-edge { stroke: var(--nc-accent); stroke-width: 2; opacity: .65; }
+.clock-label { font: 15px system-ui, sans-serif; fill: var(--nc-ink); }
+.clock-hand { stroke: #a55719; stroke-width: 3; stroke-linecap: round; }
+.clock-hub { fill: #a55719; }
+.clock-readout { font-size: .95rem; overflow-wrap: anywhere; }
+.clock-readout p { margin-bottom: .8rem; }
+.clock-error { color: #9b3128; min-height: 1em; margin: .25rem 0; }
+.clock-static { padding-top: 1rem; border-top: 1px solid var(--nc-rule); font-size: .95rem; }
+.source-note { color: #526259; font-size: .9rem; }
+details { margin: 1rem 0; }
+summary { cursor: pointer; color: var(--nc-accent); font-weight: 600; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  .clock-layout { grid-template-columns: 1fr; gap: .2rem; }
+  .clock-lab { padding: 1rem .75rem; }
+  .clock-controls { gap: .75rem; }
+}
+@media print {
+  .clock-controls, .clock-actions, [data-canvas], [data-loading], .clock-error { display: none !important; }
+  .clock-lab { break-inside: avoid; }
+}

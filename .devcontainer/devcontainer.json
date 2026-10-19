@@ -1,0 +1,13 @@
+{
+  "name": "The Natural Curriculum",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "24" }
+  },
+  "postCreateCommand": "python scripts/project.py setup && npm ci && npx playwright install --with-deps chromium && python scripts/project.py render",
+  "forwardPorts": [4200],
+  "portsAttributes": { "4200": { "label": "Quarto 教材预览", "onAutoForward": "notify" } },
+  "customizations": {
+    "vscode": { "extensions": ["quarto.quarto"] }
+  }
+}

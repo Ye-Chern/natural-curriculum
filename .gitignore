@@ -1,0 +1,16 @@
+/.quarto/
+/_book/
+# Quarto may briefly create intermediate HTML beside its source while rendering.
+/*.html
+/chapters/*.html
+/.local/
+/node_modules/
+/test-results/
+/playwright-report/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+
+**/*.quarto_ipynb

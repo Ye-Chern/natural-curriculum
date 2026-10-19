@@ -1,0 +1,42 @@
+project:
+  type: book
+  output-dir: _book
+  pre-render:
+    - python scripts/sync_content.py
+  resources:
+    - assets/
+  preview:
+    port: 4200
+    browser: false
+
+metadata-files:
+  - _chapters.yml
+
+book:
+  title: "The Natural Curriculum"
+  subtitle: "自然生长的数学教材"
+  author: "Ye-Chern · Angle0 与研究合作者"
+  description: "从可探索的问题出发，让数学结构决定下一步。"
+  site-url: https://ye-chern.github.io/natural-curriculum/
+  repo-url: https://github.com/Ye-Chern/natural-curriculum
+  repo-actions: [edit, issue]
+  search: true
+  sidebar:
+    style: docked
+    collapse-level: 2
+  page-footer:
+    left: "从问题出发，以证明前进。"
+    right: "The Natural Curriculum"
+
+lang: zh
+bibliography: references.bib
+link-citations: true
+format:
+  html:
+    theme: cosmo
+    css: assets/styles.css
+    html-math-method: mathjax
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-copy: true

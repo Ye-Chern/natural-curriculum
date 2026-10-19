@@ -1,0 +1,62 @@
+name: Build, test and publish textbook
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: book-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install pinned Quarto with checksum verification
+        run: python scripts/project.py setup
+      - run: npm ci
+      - name: Check source index and mathematics implementation
+        run: |
+          python scripts/sync_content.py --check
+          npm test
+      - name: Render textbook and check local links
+        run: |
+          python scripts/project.py render
+          python scripts/project.py check
+      - run: npx playwright install --with-deps chromium
+      - name: Test desktop, mobile and no-JavaScript reading
+        run: npm run test:browser
+      - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: _book
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy validated textbook
+        id: deployment
+        uses: actions/deploy-pages@v4

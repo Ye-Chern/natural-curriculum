@@ -1,0 +1,46 @@
+name: Verify cloud development environment
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.devcontainer/**'
+      - '.github/workflows/environment.yml'
+      - '.quarto-version'
+      - 'scripts/project.py'
+      - 'package-lock.json'
+  pull_request:
+    paths:
+      - '.devcontainer/**'
+      - '.github/workflows/environment.yml'
+      - '.quarto-version'
+      - 'scripts/project.py'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  devcontainer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build the Codespaces container and run the author workflow
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: |
+            set -eu
+            python scripts/project.py setup
+            npm ci
+            npx playwright install --with-deps chromium
+            npm test
+            python scripts/project.py render
+            python scripts/project.py check
+            npm run test:browser
