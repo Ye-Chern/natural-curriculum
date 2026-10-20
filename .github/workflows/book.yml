@@ -32,6 +32,9 @@ jobs:
       - name: Check source index and mathematics implementation
         run: |
           python scripts/sync_content.py --check
+          python scripts/minimal_index.py --check
+          python scripts/check_fano.py --check
+          python -m unittest discover -s tests -p "test_*.py"
           npm test
       - name: Render textbook and check local links
         run: |
@@ -45,9 +48,31 @@ jobs:
         with:
           path: _book
 
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install distribution GAP and primitive groups library
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gap-core gap-primgrp gap-smallgrp gap-transgrp
+      - name: Recompute bounded research and compare stable classes
+        run: >-
+          python scripts/minimal_index.py --max-degree 12
+          --output .local/ci/minimal-index-12
+          --compare research/results/minimal-index-12.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: minimal-index-computation
+          path: .local/ci/minimal-index-12.*
+
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
+    needs: [build, research]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:

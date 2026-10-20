@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "scope": {
+    "min_degree": 2,
+    "max_degree": 12
+  },
+  "software": {
+    "gap": "4.16.1",
+    "primgrp": "4.0.3"
+  },
+  "status": "computed-relative-to-PrimGrp-coverage-and-GAP-algorithms",
+  "completeness_dependency": "PrimGrp manual 1.1 plus minimal-index reduction in research/minimal-index.md",
+  "stages": [
+    {
+      "type": "degree",
+      "degree": 2,
+      "primitive_count": 1,
+      "simple_actions": 1,
+      "new_classes": 1
+    },
+    {
+      "type": "degree",
+      "degree": 3,
+      "primitive_count": 2,
+      "simple_actions": 1,
+      "new_classes": 1
+    },
+    {
+      "type": "degree",
+      "degree": 4,
+      "primitive_count": 2,
+      "simple_actions": 0,
+      "new_classes": 0
+    },
+    {
+      "type": "degree",
+      "degree": 5,
+      "primitive_count": 5,
+      "simple_actions": 2,
+      "new_classes": 2
+    },
+    {
+      "type": "degree",
+      "degree": 6,
+      "primitive_count": 4,
+      "simple_actions": 2,
+      "new_classes": 1
+    },
+    {
+      "type": "degree",
+      "degree": 7,
+      "primitive_count": 7,
+      "simple_actions": 3,
+      "new_classes": 3
+    },
+    {
+      "type": "degree",
+      "degree": 8,
+      "primitive_count": 7,
+      "simple_actions": 2,
+      "new_classes": 1
+    },
+    {
+      "type": "degree",
+      "degree": 9,
+      "primitive_count": 11,
+      "simple_actions": 2,
+      "new_classes": 2
+    },
+    {
+      "type": "degree",
+      "degree": 10,
+      "primitive_count": 9,
+      "simple_actions": 3,
+      "new_classes": 1
+    },
+    {
+      "type": "degree",
+      "degree": 11,
+      "primitive_count": 8,
+      "simple_actions": 4,
+      "new_classes": 4
+    },
+    {
+      "type": "degree",
+      "degree": 12,
+      "primitive_count": 6,
+      "simple_actions": 4,
+      "new_classes": 2
+    }
+  ],
+  "classes": [
+    {
+      "label": "C2",
+      "order": 2,
+      "mu": 2,
+      "factorial_lower_bound": 2,
+      "representative": [
+        2,
+        1
+      ],
+      "actions": [
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "C3",
+      "order": 3,
+      "mu": 3,
+      "factorial_lower_bound": 3,
+      "representative": [
+        3,
+        1
+      ],
+      "actions": [
+        [
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "C5",
+      "order": 5,
+      "mu": 5,
+      "factorial_lower_bound": 5,
+      "representative": [
+        5,
+        1
+      ],
+      "actions": [
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "A5",
+      "order": 60,
+      "mu": 5,
+      "factorial_lower_bound": 5,
+      "representative": [
+        5,
+        4
+      ],
+      "actions": [
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          10,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "A6",
+      "order": 360,
+      "mu": 6,
+      "factorial_lower_bound": 6,
+      "representative": [
+        6,
+        3
+      ],
+      "actions": [
+        [
+          6,
+          3
+        ],
+        [
+          10,
+          3
+        ]
+      ]
+    },
+    {
+      "label": "C7",
+      "order": 7,
+      "mu": 7,
+      "factorial_lower_bound": 7,
+      "representative": [
+        7,
+        1
+      ],
+      "actions": [
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "PSL(3,2)",
+      "order": 168,
+      "mu": 7,
+      "factorial_lower_bound": 7,
+      "representative": [
+        7,
+        5
+      ],
+      "actions": [
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          4
+        ]
+      ]
+    },
+    {
+      "label": "A7",
+      "order": 2520,
+      "mu": 7,
+      "factorial_lower_bound": 7,
+      "representative": [
+        7,
+        6
+      ],
+      "actions": [
+        [
+          7,
+          6
+        ]
+      ]
+    },
+    {
+      "label": "A8",
+      "order": 20160,
+      "mu": 8,
+      "factorial_lower_bound": 8,
+      "representative": [
+        8,
+        6
+      ],
+      "actions": [
+        [
+          8,
+          6
+        ]
+      ]
+    },
+    {
+      "label": "PSL(2,8)",
+      "order": 504,
+      "mu": 9,
+      "factorial_lower_bound": 7,
+      "representative": [
+        9,
+        8
+      ],
+      "actions": [
+        [
+          9,
+          8
+        ]
+      ]
+    },
+    {
+      "label": "A9",
+      "order": 181440,
+      "mu": 9,
+      "factorial_lower_bound": 9,
+      "representative": [
+        9,
+        10
+      ],
+      "actions": [
+        [
+          9,
+          10
+        ]
+      ]
+    },
+    {
+      "label": "A10",
+      "order": 1814400,
+      "mu": 10,
+      "factorial_lower_bound": 10,
+      "representative": [
+        10,
+        8
+      ],
+      "actions": [
+        [
+          10,
+          8
+        ]
+      ]
+    },
+    {
+      "label": "C11",
+      "order": 11,
+      "mu": 11,
+      "factorial_lower_bound": 11,
+      "representative": [
+        11,
+        1
+      ],
+      "actions": [
+        [
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "PSL(2,11)",
+      "order": 660,
+      "mu": 11,
+      "factorial_lower_bound": 11,
+      "representative": [
+        11,
+        5
+      ],
+      "actions": [
+        [
+          11,
+          5
+        ],
+        [
+          12,
+          3
+        ]
+      ]
+    },
+    {
+      "label": "M11",
+      "order": 7920,
+      "mu": 11,
+      "factorial_lower_bound": 11,
+      "representative": [
+        11,
+        6
+      ],
+      "actions": [
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "A11",
+      "order": 19958400,
+      "mu": 11,
+      "factorial_lower_bound": 11,
+      "representative": [
+        11,
+        7
+      ],
+      "actions": [
+        [
+          11,
+          7
+        ]
+      ]
+    },
+    {
+      "label": "M12",
+      "order": 95040,
+      "mu": 12,
+      "factorial_lower_bound": 11,
+      "representative": [
+        12,
+        2
+      ],
+      "actions": [
+        [
+          12,
+          2
+        ]
+      ]
+    },
+    {
+      "label": "A12",
+      "order": 239500800,
+      "mu": 12,
+      "factorial_lower_bound": 12,
+      "representative": [
+        12,
+        5
+      ],
+      "actions": [
+        [
+          12,
+          5
+        ]
+      ]
+    }
+  ],
+  "isomorphism_calls": 6,
+  "source_sha256": {
+    "scripts/minimal_index.py": "d7c807522effe6c0bdeb26742ed1ac3e36784ed144748b171d23fe3735dc3585",
+    "scripts/minimal_index.g": "c03e528faa941d9bf83ad831d53b4cf2a2255cc2d86587ccc6c0244f5314020a"
+  },
+  "transcript_sha256": "1ee220c3ed1b1ac2a74b86e764b0e4f598289aac58209d884e98f7ae0fa5a085",
+  "argv": [
+    ".local/gap-core/gap.exe",
+    "-l",
+    "/cygdrive/d/work2/natural-curriculum-minimal-index/.local/gap-core",
+    "-q",
+    "-b",
+    "-r",
+    "-T",
+    "-A",
+    "-x",
+    "4096"
+  ],
+  "command": ".local/gap-core/gap.exe -l /cygdrive/d/work2/natural-curriculum-minimal-index/.local/gap-core -q -b -r -T -A -x 4096",
+  "input": "Read(\"/cygdrive/d/work2/natural-curriculum-minimal-index/scripts/minimal_index.g\");; RunMinimalIndex(12);; QUIT_GAP(0);",
+  "runtime_bin": "D:\\work2\\natural-curriculum-minimal-index\\.local\\gap-core\\runtime\\bin"
+}
