@@ -174,11 +174,20 @@ Windows发行包使用官方4.16.1安装器，SHA-256为b26346c3febb31f3e4460097
 
 第二章协调：当前main尚无群作用章节；本分支不抢写。建议其主线只取“陪集如何被搬动→稳定子→核→小集合的能力界”，将标准形和分类作为后续研究材料。n=8若无非交错新单群，依然可能有几何新现象；不要求每个n各占一章。
 
+### 长期方向的最小落点（本轮追加）
+
+**家族先于重复计算。** events.json沿用同一个索引：首章的C_p家族与本稿的A_m家族各一条事件，不为每个素数或每个m复制证明。前者μ(C_p)=p，后者μ(A_m)=m（m≥5），后者单性明确引用外部定理，最小性用统一阶数界证明。新增计算实例只提供校验与作用证据；不能替代家族公式的例外检查。
+
+**先调查已经知道什么。** Guest、Morris、Praeger、Spiga 的 *On the maximum orders of elements of finite almost simple groups and primitive permutation groups*，作者机构保存的稿件§3、Table4（PDF第16页），已整理李型单群的最小忠实次数，并注明依据既有文献及更正。这里m(T)与本项目μ(T)由T2对应。对q≥4的素数幂，已知PSL2(q)的公式为q+1，例外q=5、7、9、11依次为5、7、6、11。故PSL2(8)的9及PSL2(11)的11是已知家族规律及例外的再发现，**不是开放问题**。本轮核对了表、定义及其说明，没有重建Dickson子群分类的完整证明；索引中的open条目表示“本项目复现证明待完成”。下一轮可优先重建这个家族，而不是盲目扫描更多n。更大秩家族暂不照表批量导入，须另查假设、记号、例外和更正。
+
+**知识索引与历史。** 沿用events.json的对象、参数、依赖、状态、正文/研究指针，证据留在results，文献统一references.bib；用Git全文检索即可跨群、作用和几何现象找入口。新增“家族”是数学内容粒度，不增加表或服务。Burnside的§111、§146及其具体构造，已是未来章末历史资料的可定位入口；本稿使用现代线性代数重建Fano作用，不把它当成1897年作者原来的发现顺序。逐次扫描、家族理论和衍生现象并行，只有经教学转写的成熟内容增长教材。
+
 ## 来源定位与审读范围
 
 - Burnside，1897，*Theory of Groups of Finite Order*，[Gutenberg重排PDF](https://roice3.org/ruen/1897_Theory_of_Groups_of_Finite_Order.pdf)，§146，印刷227–231页。本轮主审读了这些完整页的低次分支；只引用n≤7，不依赖该书所有更高次分类或历史断言。
 - [PrimGrp官方手册§1.1](https://gap-packages.github.io/primgrp/doc/chap1.html)：覆盖、编号稳定性、名字并非唯一、数据库属性与API。软件与包的实际版本见运行汇总，不能用网页当前版本替代运行版本。
 - [GAP官方安装说明](https://github.com/gap-system/gap/blob/master/INSTALL.md)，环境复现；Windows发布包下载后核对官方SHA-256，不提交安装包。
 - Andrew V. Sutherland，[Arithmetic Equivalence and Isospectrality](https://math.mit.edu/~drew/ArithmeticEquivalenceLectureNotes.pdf)，§2.3 Lemma2.7，PDF第15页，固定陪集数与共轭类交的等价。本轮只采用该群论引理及本文直接计数证明，没有推导任何新数域或等谱对象。
+- Guest、Morris、Praeger、Spiga，[作者机构稿件](https://api.research-repository.uwa.edu.au/ws/portalfiles/portal/11790160/Guest_et_al_On_the_maximum_orders_of_elements_of_finite_almost_simple_groups_and_primitive_permutation_groups_2015_.pdf)，§3及Table4，PDF第15–16页：已有最小次数家族公式、来源与更正。引用作者存档稿，未校勘出版社最终版本。只登记PSL2(q)的已知规律及复现任务，不在本轮依此扩张全体分类范围。
 
 数学稿经两位GPT-6 Luna分别提供低次分类、Fano论证并复核程序边界及T7全域命题，Angle0检查原书、关键推论和有限模型；已修正错误节号、稳定子非共轭的不足论证及Cp²正则轨道漏项。模型审读不是外部同行评审；未宣称任何结论具有研究原创性。

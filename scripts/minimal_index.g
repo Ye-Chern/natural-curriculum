@@ -1,4 +1,6 @@
 # Exact finite exploration. Run via minimal_index.py, not as a theorem prover.
+if LoadPackage("primgrp") = fail then Error("PrimGrp unavailable"); fi;
+if LoadPackage("smallgrp") = fail then Error("SmallGrp identification unavailable"); fi;
 NCJsonString := function(s)
     Print("\"", ReplacedString(ReplacedString(s, "\\", "\\\\"), "\"", "\\\""), "\"");
 end;
@@ -6,7 +8,6 @@ end;
 RunMinimalIndex := function(bound)
     local reps, repids, n, count, i, db, g, j, iso, match, fresh,
           simpleCount, newCount, h, images, checked, pair;
-    if LoadPackage("primgrp") = fail then Error("PrimGrp unavailable"); fi;
     reps := []; repids := []; checked := 0;
     Print("{\"type\":\"meta\",\"gap\":"); NCJsonString(GAPInfo.Version);
     Print(",\"primgrp\":"); NCJsonString(PackageInfo("primgrp")[1].Version);

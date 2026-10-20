@@ -406,7 +406,7 @@
   "isomorphism_calls": 6,
   "source_sha256": {
     "scripts/minimal_index.py": "d7c807522effe6c0bdeb26742ed1ac3e36784ed144748b171d23fe3735dc3585",
-    "scripts/minimal_index.g": "c03e528faa941d9bf83ad831d53b4cf2a2255cc2d86587ccc6c0244f5314020a"
+    "scripts/minimal_index.g": "2bbb6283aa0b2ff264d40a4b70c075acc176d155be25dd0c1342587221f78c17"
   },
   "transcript_sha256": "1ee220c3ed1b1ac2a74b86e764b0e4f598289aac58209d884e98f7ae0fa5a085",
   "argv": [

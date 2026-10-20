@@ -59,7 +59,7 @@ jobs:
       - name: Install distribution GAP and primitive groups library
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends gap-core gap-primgrp gap-smallgrp gap-transgrp
+          sudo apt-get install -y --no-install-recommends gap-core gap-primgrp gap-smallgrp gap-smallgrp-extra gap-transgrp
       - name: Recompute bounded research and compare stable classes
         run: >-
           python scripts/minimal_index.py --max-degree 12

@@ -90,5 +90,27 @@
     "status": "computed",
     "research_file": "research/minimal-index.md",
     "dependencies": "T1-T2归约、PrimGrp小次数覆盖、GAP判定及运行结果；不是本文自足的n≤12理论分类"
+  },
+  {
+    "id": "alternating-family-minimal-index",
+    "family": "alternating",
+    "kind": "完整家族公式；研究层",
+    "parameter": "所有整数m≥5，无该范围内例外",
+    "object": "μ(A_m)=m",
+    "evidence": "T3统一证明：自然作用上界m，A_m单性与m!/2>(m-1)!给下界；单性引用Burnside§111。",
+    "status": "research-proved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T1-T2、交错群单性外部定理；不逐个m重写证明"
+  },
+  {
+    "id": "psl2-family-proof-reconstruction",
+    "family": "PSL2",
+    "kind": "文献已知家族定理的项目内证明复现任务；非数学界开放问题",
+    "parameter": "q≥4素数幂；例外q=5,7,9,11",
+    "object": "复现μ(PSL2(q))=q+1及四个例外5,7,6,11",
+    "evidence": "Guest等作者存档稿§3 Table4已核读并给出公式；本项目未重建Dickson子群分类与例外排除。",
+    "status": "open",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T2记号对应；guest-minimal-degrees文献；尚待子群分类证明重建"
   }
 ]
