@@ -14,14 +14,23 @@ def outputs():
              "这里记录本书已经解释并证明的结构变化。参数 $n$ 在单群条目中表示最小子群指数，在轨道条目中表示钟面格数；两类事件分别标记，不能混读。", "",
              "这是内容索引，不是预定课程表。元数据见仓库 `research/events.json`；只有状态为 `proved` 的条目进入此页与正文导航。", ""]
     for event in events:
-        for key in ["id", "kind", "parameter", "object", "evidence", "status", "chapter", "anchor", "dependencies"]:
+        for key in ["id", "kind", "parameter", "object", "evidence", "status", "dependencies"]:
             if not event.get(key):
                 raise ValueError(f"Event missing {key}: {event}")
         if event["id"] in seen:
             raise ValueError("Duplicate event id")
         seen.add(event["id"])
         if event["status"] != "proved":
+            if event["status"] not in {"research-proved", "computed", "conjecture", "open", "disproved", "draft"}:
+                raise ValueError(f"Unknown proof status: {event['id']}")
+            if not event.get("research_file"):
+                raise ValueError(f"Research event missing research_file: {event['id']}")
+            if not (ROOT / event["research_file"]).is_file():
+                raise ValueError(f"Missing research file: {event['id']}")
             continue
+        for key in ["chapter", "anchor"]:
+            if not event.get(key):
+                raise ValueError(f"Proved textbook event missing {key}: {event['id']}")
         chapter = ROOT / event["chapter"]
         if not chapter.is_file() or not re.search(r"\{[^}]*#" + re.escape(event["anchor"]) + r"[\s}]", chapter.read_text(encoding="utf-8")):
             raise ValueError(f"Missing chapter/anchor: {event['id']}")

@@ -1,0 +1,37 @@
+{"type":"meta","gap":"4.16.1","primgrp":"4.0.3","bound":12}
+{"type":"simple","degree":2,"id":1,"order":2,"label":"C2","first":[ 2, 1 ],"new":true,"stabilizer_order":1,"generators":[ [ 2, 1 ] ]}
+{"type":"degree","degree":2,"primitive_count":1,"simple_actions":1,"new_classes":1}
+{"type":"simple","degree":3,"id":1,"order":3,"label":"C3","first":[ 3, 1 ],"new":true,"stabilizer_order":1,"generators":[ [ 2, 3, 1 ] ]}
+{"type":"degree","degree":3,"primitive_count":2,"simple_actions":1,"new_classes":1}
+{"type":"degree","degree":4,"primitive_count":2,"simple_actions":0,"new_classes":0}
+{"type":"simple","degree":5,"id":1,"order":5,"label":"C5","first":[ 5, 1 ],"new":true,"stabilizer_order":1,"generators":[ [ 2, 3, 4, 5, 1 ] ]}
+{"type":"simple","degree":5,"id":4,"order":60,"label":"A5","first":[ 5, 4 ],"new":true,"stabilizer_order":12,"generators":[ [ 2, 3, 4, 5, 1 ], [ 1, 2, 4, 5, 3 ] ]}
+{"type":"degree","degree":5,"primitive_count":5,"simple_actions":2,"new_classes":2}
+{"type":"simple","degree":6,"id":1,"order":60,"label":"A5","first":[ 5, 4 ],"new":false,"stabilizer_order":10,"generators":[ [ 1, 2, 5, 6, 3, 4 ], [ 2, 5, 4, 6, 1, 3 ] ]}
+{"type":"simple","degree":6,"id":3,"order":360,"label":"A6","first":[ 6, 3 ],"new":true,"stabilizer_order":60,"generators":[ [ 2, 3, 4, 5, 1, 6 ], [ 1, 2, 3, 5, 6, 4 ] ]}
+{"type":"degree","degree":6,"primitive_count":4,"simple_actions":2,"new_classes":1}
+{"type":"simple","degree":7,"id":1,"order":7,"label":"C7","first":[ 7, 1 ],"new":true,"stabilizer_order":1,"generators":[ [ 2, 3, 4, 5, 6, 7, 1 ] ]}
+{"type":"simple","degree":7,"id":5,"order":168,"label":"PSL(3,2)","first":[ 7, 5 ],"new":true,"stabilizer_order":24,"generators":[ [ 4, 2, 3, 1, 5, 7, 6 ], [ 3, 1, 2, 7, 4, 6, 5 ] ]}
+{"type":"simple","degree":7,"id":6,"order":2520,"label":"A7","first":[ 7, 6 ],"new":true,"stabilizer_order":360,"generators":[ [ 2, 3, 4, 5, 6, 7, 1 ], [ 1, 2, 3, 4, 6, 7, 5 ] ]}
+{"type":"degree","degree":7,"primitive_count":7,"simple_actions":3,"new_classes":3}
+{"type":"simple","degree":8,"id":4,"order":168,"label":"PSL(3,2)","first":[ 7, 5 ],"new":false,"stabilizer_order":21,"generators":[ [ 2, 3, 4, 5, 6, 7, 1, 8 ], [ 1, 3, 5, 7, 2, 4, 6, 8 ], [ 8, 7, 4, 3, 6, 5, 2, 1 ] ]}
+{"type":"simple","degree":8,"id":6,"order":20160,"label":"A8","first":[ 8, 6 ],"new":true,"stabilizer_order":2520,"generators":[ [ 2, 3, 4, 5, 6, 7, 1, 8 ], [ 1, 2, 3, 4, 5, 7, 8, 6 ] ]}
+{"type":"degree","degree":8,"primitive_count":7,"simple_actions":2,"new_classes":1}
+{"type":"simple","degree":9,"id":8,"order":504,"label":"PSL(2,8)","first":[ 9, 8 ],"new":true,"stabilizer_order":56,"generators":[ [ 2, 3, 4, 5, 6, 7, 1, 8, 9 ], [ 8, 4, 7, 2, 6, 5, 3, 1, 9 ], [ 1, 7, 6, 5, 4, 3, 2, 9, 8 ] ]}
+{"type":"simple","degree":9,"id":10,"order":181440,"label":"A9","first":[ 9, 10 ],"new":true,"stabilizer_order":20160,"generators":[ [ 2, 3, 4, 5, 6, 7, 8, 9, 1 ], [ 1, 2, 3, 4, 5, 6, 8, 9, 7 ] ]}
+{"type":"degree","degree":9,"primitive_count":11,"simple_actions":2,"new_classes":2}
+{"type":"simple","degree":10,"id":1,"order":60,"label":"A5","first":[ 5, 4 ],"new":false,"stabilizer_order":6,"generators":[ [ 5, 9, 8, 2, 7, 6, 1, 10, 4, 3 ], [ 1, 6, 5, 7, 3, 2, 4, 8, 10, 9 ] ]}
+{"type":"simple","degree":10,"id":3,"order":360,"label":"A6","first":[ 6, 3 ],"new":false,"stabilizer_order":36,"generators":[ [ 2, 3, 1, 5, 6, 4, 8, 9, 7, 10 ], [ 1, 4, 7, 3, 6, 9, 2, 5, 8, 10 ], [ 10, 2, 3, 7, 6, 5, 4, 9, 8, 1 ] ]}
+{"type":"simple","degree":10,"id":8,"order":1814400,"label":"A10","first":[ 10, 8 ],"new":true,"stabilizer_order":181440,"generators":[ [ 2, 3, 4, 5, 6, 7, 8, 9, 1, 10 ], [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 8 ] ]}
+{"type":"degree","degree":10,"primitive_count":9,"simple_actions":3,"new_classes":1}
+{"type":"simple","degree":11,"id":1,"order":11,"label":"C11","first":[ 11, 1 ],"new":true,"stabilizer_order":1,"generators":[ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1 ] ]}
+{"type":"simple","degree":11,"id":5,"order":660,"label":"PSL(2,11)","first":[ 11, 5 ],"new":true,"stabilizer_order":60,"generators":[ [ 5, 4, 10, 2, 1, 6, 11, 8, 9, 3, 7 ], [ 1, 2, 11, 7, 3, 8, 9, 10, 4, 6, 5 ] ]}
+{"type":"simple","degree":11,"id":6,"order":7920,"label":"M11","first":[ 11, 6 ],"new":true,"stabilizer_order":720,"generators":[ [ 10, 8, 11, 4, 7, 6, 5, 2, 9, 1, 3 ], [ 4, 11, 3, 7, 5, 1, 6, 8, 2, 9, 10 ] ]}
+{"type":"simple","degree":11,"id":7,"order":19958400,"label":"A11","first":[ 11, 7 ],"new":true,"stabilizer_order":1814400,"generators":[ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1 ], [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 9 ] ]}
+{"type":"degree","degree":11,"primitive_count":8,"simple_actions":4,"new_classes":4}
+{"type":"simple","degree":12,"id":1,"order":7920,"label":"M11","first":[ 11, 6 ],"new":false,"stabilizer_order":660,"generators":[ [ 5, 9, 8, 2, 7, 6, 1, 10, 4, 3, 11, 12 ], [ 1, 6, 5, 7, 3, 2, 4, 8, 10, 9, 11, 12 ], [ 11, 7, 5, 6, 3, 4, 2, 8, 9, 10, 1, 12 ], [ 1, 5, 6, 7, 2, 3, 4, 8, 9, 10, 12, 11 ] ]}
+{"type":"simple","degree":12,"id":2,"order":95040,"label":"M12","first":[ 12, 2 ],"new":true,"stabilizer_order":7920,"generators":[ [ 2, 3, 1, 5, 6, 4, 8, 9, 7, 10, 11, 12 ], [ 1, 4, 7, 3, 6, 9, 2, 5, 8, 10, 11, 12 ], [ 1, 9, 5, 6, 2, 7, 8, 4, 3, 10, 11, 12 ], [ 10, 2, 3, 7, 6, 5, 4, 9, 8, 1, 11, 12 ], [ 1, 2, 3, 8, 9, 7, 6, 4, 5, 11, 10, 12 ], [ 1, 2, 3, 7, 8, 9, 4, 5, 6, 10, 12, 11 ] ]}
+{"type":"simple","degree":12,"id":3,"order":660,"label":"PSL(2,11)","first":[ 11, 5 ],"new":false,"stabilizer_order":55,"generators":[ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 12 ], [ 1, 5, 9, 2, 6, 10, 3, 7, 11, 4, 8, 12 ], [ 12, 11, 6, 8, 9, 3, 10, 4, 5, 7, 2, 1 ] ]}
+{"type":"simple","degree":12,"id":5,"order":239500800,"label":"A12","first":[ 12, 5 ],"new":true,"stabilizer_order":19958400,"generators":[ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 12 ], [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 10 ] ]}
+{"type":"degree","degree":12,"primitive_count":6,"simple_actions":4,"new_classes":2}
+{"type":"done","classes":18,"isomorphism_calls":6}

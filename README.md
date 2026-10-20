@@ -30,7 +30,7 @@ $$
 
 **教材发布地址：[The Natural Curriculum](https://ye-chern.github.io/natural-curriculum/)** · [自动构建记录](https://github.com/Ye-Chern/natural-curriculum/actions/workflows/book.yml)
 
-2026-10-20 首次交接：本地构建和测试已通过；GitHub 官方 Actions／Pages 故障期间，首次云端验收和上线仍在等待。最新事实以工作流和[研究状态](research/state.md)为准；首次部署成功前发布地址可能返回 404。
+2026-10-20 本轮刷新：首次教材构建与Pages部署已成功；独立的容器环境验收因Yarn软件源签名错误失败，不能与教材构建混为一谈。最新事实以工作流和[研究状态](research/state.md)为准。
 
 已进行 GPT-6 Luna 的独立数学文本审读与 Gemini 的教学质疑；这些不替代真实初学者试读或正式数学审稿。[研究状态](research/state.md)保留验证结果、取舍与下一步问题。后续参与者请先读 [AGENTS.md](AGENTS.md)。
 
@@ -96,5 +96,20 @@ git grep "prime-cyclic-simple"
 脚本从状态为 `proved` 且有真实正文和锚点的条目生成 `_chapters.yml` 与 `events.qmd`。草稿可保留在元数据中，但不会预占导航；新主题有可读正文、证明和事件证据后才增长目录。请勿手工编辑这两份生成文件。
 
 下一步首先做真实初学者试读，再从“陪集能否被群搬动”建立群作用。是否引入新的单群或几何对象，应由之后的论证决定。
+
+## 最小指数研究（与教材双轨）
+
+[研究稿与恢复前沿](research/minimal-index.md)证明陪集核心、本原性、单群的忠实次数联系，并以明确的低次数外部分类定理完成μ≤7的分析。GAP/PrimGrp扫描记录作用编号、抽象同构去重、首次次数、版本和证明边界；Fano矩阵模型另有不依赖数据库的有限核对。研究事件即使已有证明，也需教学转写和审读才进入教材；CI不自动发布研究定理。
+
+```sh
+# 实际重做探索，需要单独安装GAP及PrimGrp；不影响教材阅读与构建。
+python scripts/minimal_index.py --max-degree 12
+# 以下离线核对已提交结果，并不重做GAP枚举。
+python scripts/minimal_index.py --check
+python scripts/check_fano.py --check
+python -m unittest discover -s tests -p "test_*.py"
+```
+
+下一次增加研究边界时重扫2至n，保留所有已遇到的作用编号，再比较抽象同构；不按名字或阶合并。GAP不可用、超时或只完成部分次数时，记录断点，不把预期名单写成已计算结果。修改计算脚本后旧哈希检查会失败，需要重跑并复核相关结论。CI另在Linux实际重算至12并比较稳定数据库编号/分类；环境版本记录在运行产物中，不自动改写仓库结果。
 
 > 对任何数学结论，请保留可核查的证明或来源；数学史与数学发现的教学重建必须明确区别。

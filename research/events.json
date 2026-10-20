@@ -20,5 +20,97 @@
     "chapter": "chapters/cyclic-groups.qmd",
     "anchor": "sec-simple",
     "dependencies": "本章循环群子群分类、交换群的正规性、陪集定义"
+  },
+  {
+    "id": "minimal-index-core-primitive",
+    "kind": "研究定理；尚未转写入门正文",
+    "parameter": "任意非平凡有限群；忠实性与次数等式限单群",
+    "object": "最小指数、核心与本原作用",
+    "evidence": "T1-T2给出完整自然语言证明及V4反例；不是形式化认证。",
+    "status": "research-proved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "群作用、陪集、块与核；本文件证明"
+  },
+  {
+    "id": "minimal-index-simple-through-seven",
+    "kind": "新增单群的低次数分类；含外部定理",
+    "parameter": "μ≤7；首次指数2,3,5,6,7",
+    "object": "C2,C3,C5,C7,A5,A6,A7,PSL3(2)",
+    "evidence": "T3引用已核读的Burnside 1897 §146 pp.227-231，并分别证明最小性；A7不可遗漏。",
+    "status": "research-proved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T1-T4；Burnside低次数分类与§111交错群单性"
+  },
+  {
+    "id": "fano-marked-dual-actions",
+    "kind": "衍生几何/表示现象；不是新增单群",
+    "parameter": "G=PSL3(2)，两种7次带标记G作用",
+    "object": "点线对偶、非共轭稳定子与相同固定点数",
+    "evidence": "T5的轨道与秩证明；独立512矩阵有限模型核对。",
+    "status": "research-proved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T4矩阵构造、T5直接证明；Sutherland Lemma2.7仅核对术语"
+  },
+  {
+    "id": "minimal-index-general-faithfulness-false",
+    "kind": "已推翻的一般化",
+    "parameter": "一般非平凡有限群",
+    "object": "最小指数等于最小忠实次数（错误）",
+    "evidence": "CE1：V4最小指数2，最小忠实次数4；一般Cp×Cp为p和2p。",
+    "status": "disproved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T2反例及完整下界论证"
+  },
+  {
+    "id": "fano-hamming-code",
+    "kind": "衍生编码结构；不是新增单群",
+    "parameter": "Fano平面，F₂上的[7,4,3]码",
+    "object": "Fano线指标张成二元Hamming码",
+    "evidence": "T6证明线指标张成秩3校验矩阵的核，给出维数4、最小距离3与单错定位；有限程序独立核对。",
+    "status": "research-proved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T4 Fano线模型；T6线性代数证明"
+  },
+  {
+    "id": "fano-modular-permutation-modules",
+    "kind": "衍生表示现象；非新增单群",
+    "parameter": "任意域K；G=GL3(2)点/线置换模",
+    "object": "两置换模同构当且仅当char(K)≠2",
+    "evidence": "T7完整证明：等变矩阵空间由M,J张成；char2秩障碍；char3用M+J修复；其余特征用M。",
+    "status": "research-proved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T5点线双轨道；T6二元秩4；MMᵀ=MᵀM=2I+J"
+  },
+  {
+    "id": "minimal-index-computation-through-twelve",
+    "kind": "完整扫描记录；依赖PrimGrp覆盖与GAP算法",
+    "parameter": "2≤n≤12；62条目，18抽象单群类",
+    "object": "最小指数首次出现与跨次数本原作用",
+    "evidence": "GAP4.16.1/PrimGrp4.0.3正式输出24个单群作用、6次真实同构比较。μ下界与上界不吻合的两类为PSL(2,8)和M12。原始转录和源哈希见research/results/minimal-index-12.json。",
+    "status": "computed",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T1-T2归约、PrimGrp小次数覆盖、GAP判定及运行结果；不是本文自足的n≤12理论分类"
+  },
+  {
+    "id": "alternating-family-minimal-index",
+    "family": "alternating",
+    "kind": "完整家族公式；研究层",
+    "parameter": "所有整数m≥5，无该范围内例外",
+    "object": "μ(A_m)=m",
+    "evidence": "T3统一证明：自然作用上界m，A_m单性与m!/2>(m-1)!给下界；单性引用Burnside§111。",
+    "status": "research-proved",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T1-T2、交错群单性外部定理；不逐个m重写证明"
+  },
+  {
+    "id": "psl2-family-proof-reconstruction",
+    "family": "PSL2",
+    "kind": "文献已知家族定理的项目内证明复现任务；非数学界开放问题",
+    "parameter": "q≥4素数幂；例外q=5,7,9,11",
+    "object": "复现μ(PSL2(q))=q+1及四个例外5,7,6,11",
+    "evidence": "Guest等作者存档稿§3 Table4已核读并给出公式；本项目未重建Dickson子群分类与例外排除。",
+    "status": "open",
+    "research_file": "research/minimal-index.md",
+    "dependencies": "T2记号对应；guest-minimal-degrees文献；尚待子群分类证明重建"
   }
 ]
