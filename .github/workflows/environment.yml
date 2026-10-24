@@ -40,7 +40,4 @@ jobs:
             python scripts/project.py setup
             npm ci
             npx playwright install --with-deps chromium
-            npm test
-            python scripts/project.py render
-            python scripts/project.py check
-            npm run test:browser
+            python scripts/project.py verify

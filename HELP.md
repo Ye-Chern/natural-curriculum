@@ -32,4 +32,4 @@ Codespaces：Code → Codespaces → Create codespace；本地 VS Code 可选 Re
 
 Actions 的 build 只读仓库；仅 main 的 deploy 拥有 Pages 与身份令牌权限，使用 Actions 自带凭据。复用到新仓库时，把 Settings → Pages → Source 设为 GitHub Actions。PR 不部署到正式站点。
 
-旧容器验收曾因 Yarn 软件源签名失效中断安装；遇到同样现象先查看环境工作流的具体失败步骤，按当前源配置修复，不改数学测试。GitHub 服务故障或排队时查看工作流实际进度，恢复后先查已有运行再决定是否重试，不重复创建云工作区。
+旧容器与本轮首次验收都因 Yarn 软件源缺少公钥 `62D54FD4003F6525` 中断安装。本轮改用官方 Node feature v2，并设置 `installYarnUsingApt: false`，避免为不使用的包管理器添加 APT 源；v2 也会修复基础镜像已带的 Yarn 源签名配置，见[官方实现](https://github.com/devcontainers/features/blob/main/src/node/install.sh)。已有 Codespace 需重建容器才采用新配置。遇到同样现象先看具体失败步骤，不跳过签名检查。GitHub 服务故障或排队时先查已有运行再决定是否重试，不重复创建云工作区。
