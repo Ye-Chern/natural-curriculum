@@ -59,10 +59,15 @@ test('native controls support keyboard and long iteration keeps an accurate coun
 });
 
 test('chapter embeds a working standalone stage and links to it', async ({ page }, testInfo) => {
+  test.setTimeout(90000); // Full chapter typesetting also loads MathJax font fragments.
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto(chapter);
   await expect(page.locator('mjx-container').first()).toBeVisible({ timeout: 25000 });
+  await page.evaluate(async () => {
+    await window.MathJax.startup.promise;
+    await document.fonts.ready;
+  });
   await expect(page.locator('[data-cites="burnside1897-actions"]')).toBeVisible();
   const iframe = page.locator('iframe[src="../experiments/coset-stage.html"]');
   await expect(iframe).toHaveAttribute('title', /陪集/);
@@ -73,13 +78,24 @@ test('chapter embeds a working standalone stage and links to it', async ({ page 
   await stage.getByRole('button', { name: '施加一次 g', exact: true }).click();
   await expect(stage.locator('[data-status]')).toContainText('当前位置 B');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  if (testInfo.project.name === 'mobile') {
+    const canReadOverflow = await page.locator('.math.display').evaluateAll(equations => {
+      const equation = equations.find(item => item.scrollWidth > item.clientWidth + 1);
+      if (!equation || getComputedStyle(equation).overflowX !== 'auto') return false;
+      equation.scrollLeft = equation.scrollWidth;
+      const canScroll = equation.scrollLeft > 0;
+      equation.scrollLeft = 0;
+      return canScroll;
+    });
+    expect(canReadOverflow).toBe(true);
+  }
   expect(errors).toEqual([]);
   await iframe.screenshot({ path: testInfo.outputPath('chapter-stage.png') });
   await page.locator('#sec-kernel-core').screenshot({ path: testInfo.outputPath('chapter-proof.png') });
 });
 
-test('standalone mathematical explanation remains without JavaScript', async ({ browser, baseURL }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+test('standalone mathematical explanation remains without JavaScript', async ({ browser, baseURL }, testInfo) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: testInfo.project.use.viewport });
   const page = await context.newPage();
   await page.goto(baseURL + standalone);
   await expect(page.getByRole('heading', { name: '静态实验（无需 JavaScript）' })).toBeVisible();
@@ -88,8 +104,8 @@ test('standalone mathematical explanation remains without JavaScript', async ({ 
   await context.close();
 });
 
-test('chapter proofs remain readable without JavaScript', async ({ browser, baseURL }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+test('chapter proofs remain readable without JavaScript', async ({ browser, baseURL }, testInfo) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: testInfo.project.use.viewport });
   const page = await context.newPage();
   await page.goto(baseURL + chapter);
   await expect(page.getByRole('heading', { name: /把子群变成位置/ })).toBeVisible();

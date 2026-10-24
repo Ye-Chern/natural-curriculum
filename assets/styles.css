@@ -43,6 +43,7 @@ p { margin-bottom: 1.1rem; }
 .source-note { color: #526259; font-size: .9rem; }
 details { margin: 1rem 0; }
 summary { cursor: pointer; color: var(--nc-accent); font-weight: 600; }
+.math.display { display: block; max-width: 100%; overflow-x: auto; padding-block: .2rem; }
 [hidden] { display: none !important; }
 .coset-stage-frame { display: block; width: 100%; height: 1180px; border: 1px solid var(--nc-rule); border-radius: 4px; }
 @media (max-width: 600px) {
