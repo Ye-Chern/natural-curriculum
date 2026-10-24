@@ -3,5 +3,6 @@ book:
   chapters:
     - index.qmd
     - chapters/cyclic-groups.qmd
+    - chapters/coset-actions.qmd
     - events.qmd
     - references.qmd

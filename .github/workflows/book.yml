@@ -33,6 +33,7 @@ jobs:
         run: |
           python scripts/sync_content.py --check
           npm test
+          python -m unittest discover -s tests -p "test_*.py"
       - name: Render textbook and check local links
         run: |
           python scripts/project.py render

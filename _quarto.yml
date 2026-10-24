@@ -5,6 +5,7 @@ project:
     - python scripts/sync_content.py
   resources:
     - assets/
+    - experiments/
   preview:
     port: 4200
     browser: false

@@ -78,19 +78,26 @@ test('experiment can be operated from keyboard', async ({ page }) => {
 });
 
 test('MathJax, bibliography, navigation and completed event links render', async ({ page }) => {
+  test.setTimeout(90000); // Wait for complete typesetting and its external font resources.
   await page.goto(chapter);
   await expect(page.locator('mjx-container').first()).toBeVisible({ timeout: 25000 });
+  await page.evaluate(async () => {
+    await window.MathJax.startup.promise;
+    await document.fonts.ready;
+  });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await expect(page.locator('[data-cites="gauss1801"]')).toBeVisible();
   await page.goto('/events.html');
-  await expect(page.getByRole('link', { name: '阅读证明', exact: true })).toHaveCount(2);
-  await page.getByRole('link', { name: '阅读证明', exact: true }).last().click();
+  await expect(page.locator('main a[href*="/chapters/cyclic-groups.html#"]')).toHaveCount(2);
+  await expect(page.locator('main a[href*="/chapters/coset-actions.html#"]')).toHaveCount(2);
+  await page.locator('main a[href$="/chapters/cyclic-groups.html#sec-simple"]').click();
   await expect(page).toHaveURL(/cyclic-groups.html#sec-simple/);
   await page.goto('/references.html');
   await expect(page.locator('#ref-gauss1801')).toBeVisible();
 });
 
-test('the static experiment and proofs remain readable without JavaScript', async ({ browser, baseURL }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+test('the static experiment and proofs remain readable without JavaScript', async ({ browser, baseURL }, testInfo) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: testInfo.project.use.viewport });
   const page = await context.newPage();
   await page.goto(baseURL + chapter);
   await expect(page.getByText('静态实验（可打印、无需 JavaScript）', { exact: true })).toBeVisible();
