@@ -1,0 +1,45 @@
+{
+  "model": "SL(2,F2[t]/(t^3+t+1)) = PSL(2,8)",
+  "source_sha256": "b279d1b67e8336344ddbd2039a1c227548bf979619c04170d8ddacee98a9ee29",
+  "matrix_candidates": 4096,
+  "group_order": 504,
+  "projective_points": 9,
+  "distinct_projective_permutations": 504,
+  "multiplication_and_action_pairs_checked": 254016,
+  "element_orders": {
+    "1": 1,
+    "2": 63,
+    "3": 56,
+    "7": 216,
+    "9": 168
+  },
+  "order_seven_subgroups": 36,
+  "distinct_common_fixed_pairs": 36,
+  "normalizer_size_histogram": {
+    "14": 36
+  },
+  "point_stabilizer_sizes": [
+    56,
+    56,
+    56,
+    56,
+    56,
+    56,
+    56,
+    56,
+    56
+  ],
+  "seven_subgroups_fixing_each_point": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "ordered_distinct_pair_orbit": 72,
+  "proof_scope": "finite-model verification; minimum-index lower bound is in research/psl2-8.md"
+}

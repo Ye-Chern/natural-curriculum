@@ -1,5 +1,13 @@
 # 研究与交接状态
 
+## PSL₂(8) 独立核查续接（2026-10-24）
+
+分支 `research/psl28-verified` 基于研究 PR #1 的 cf8e766，独立于第二章教材 PR。候选证明成立：[完整研究稿](psl2-8.md)、[核查摘要](psl2-8-review.md)。本文重建 PSL₂(8) 的阶、单性、九点射影作用与36个 Sylow 7-子群；七点排除仍引用外部 A₇ 单性；八点双重计数产生 36=8r 的矛盾。事件为 research-proved，不新增教材导航。
+
+已独立重算504个矩阵、254016组乘法与作用相容性及36个七阶子群，`python scripts/check_psl28.py --check` 通过；原最小指数冻结检查、Fano 重算和9项研究测试通过。没有扩展 GAP 扫描，PSL₂(q) 一般公式及例外仍待项目内复现。
+
+PR #1 在本轮实查时仍为 Draft/Open，不代为合并。教材分支从 main 独立推进，之后合并时保留双方不同事件，再运行导航生成和相应检查。以下为上一轮记录；其中 q=8 的待证描述已由本节更新，M12 的最小性缺口仍在。
+
 ## 最小指数研究：本轮入口（2026-10-20）
 
 原问题P0@1、证明、外部依赖、反例、研究/教材分流与下一步见 [minimal-index.md](minimal-index.md)。本轮分支 `research/minimal-index`，独立工作树 `D:/work2/natural-curriculum-minimal-index`，基于85d9af7；原main工作树不改动。

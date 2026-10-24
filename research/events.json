@@ -112,5 +112,16 @@
     "status": "open",
     "research_file": "research/minimal-index.md",
     "dependencies": "T2记号对应；guest-minimal-degrees文献；尚待子群分类证明重建"
+  },
+  {
+    "id": "psl2-eight-minimal-index-proof",
+    "family": "PSL2",
+    "kind": "已知具体最小指数的研究证明复现；尚未转写教材",
+    "parameter": "G=PSL2(F8)，阶504，μ(G)=d(G)=9",
+    "object": "以36个Sylow7子群的固定点计数排除八点作用",
+    "evidence": "psl2-8.md重建阶数、单性、九点射影作用及36个Sylow7子群；七点排除明确引用A7单性，八点由36=8r矛盾排除。独立有限域矩阵重算只作实现核对。",
+    "status": "research-proved",
+    "research_file": "research/psl2-8.md",
+    "dependencies": "T1–T2陪集与忠实次数；有限域、线性代数、Sylow定理；外部A7单性定理；不依赖PrimGrp库覆盖"
   }
 ]
