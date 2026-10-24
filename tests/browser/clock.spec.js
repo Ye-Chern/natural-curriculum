@@ -82,8 +82,9 @@ test('MathJax, bibliography, navigation and completed event links render', async
   await expect(page.locator('mjx-container').first()).toBeVisible({ timeout: 25000 });
   await expect(page.locator('[data-cites="gauss1801"]')).toBeVisible();
   await page.goto('/events.html');
-  await expect(page.getByRole('link', { name: '阅读证明', exact: true })).toHaveCount(2);
-  await page.getByRole('link', { name: '阅读证明', exact: true }).last().click();
+  await expect(page.locator('main a[href*="/chapters/cyclic-groups.html#"]')).toHaveCount(2);
+  await expect(page.locator('main a[href*="/chapters/coset-actions.html#"]')).toHaveCount(2);
+  await page.locator('main a[href$="/chapters/cyclic-groups.html#sec-simple"]').click();
   await expect(page).toHaveURL(/cyclic-groups.html#sec-simple/);
   await page.goto('/references.html');
   await expect(page.locator('#ref-gauss1801')).toBeVisible();

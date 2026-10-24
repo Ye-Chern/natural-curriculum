@@ -76,9 +76,25 @@ def setup() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["setup", "render", "preview", "check"])
+    parser.add_argument("command", choices=["setup", "render", "preview", "check", "verify"])
     args, extra = parser.parse_known_args()
     os.chdir(ROOT)
+    if args.command == "verify":
+        npm = shutil.which("npm.cmd" if os.name == "nt" else "npm")
+        if not npm:
+            raise SystemExit("Node.js/npm not found. See HELP.md: browser tests.")
+        commands = [
+            [npm, "test"],
+            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"],
+            [sys.executable, "scripts/sync_content.py", "--check"],
+            [sys.executable, "scripts/project.py", "render"],
+            [sys.executable, "scripts/project.py", "check"],
+            [npm, "run", "test:browser"],
+        ]
+        for command in commands:
+            print(f"Running: {' '.join(command)}", flush=True)
+            subprocess.run(command, check=True)
+        return
     if args.command == "setup":
         setup()
         return

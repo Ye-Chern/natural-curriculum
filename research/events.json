@@ -20,5 +20,27 @@
     "chapter": "chapters/cyclic-groups.qmd",
     "anchor": "sec-simple",
     "dependencies": "本章循环群子群分类、交换群的正规性、陪集定义"
+  },
+  {
+    "id": "coset-actions-foundation",
+    "kind": "群作用的基础工具；不是新增单群",
+    "parameter": "任意群的陪集与作用；计数公式限有限群",
+    "object": "陪集作用、轨道—稳定子与作用核心",
+    "evidence": "第二章从C12与S3出发重证左陪集划分、拉格朗日定理、左乘良定义、轨道—稳定子、传递作用的陪集模型；核为core_G(H)，它是H内最大正规子群。",
+    "status": "proved",
+    "chapter": "chapters/coset-actions.qmd",
+    "anchor": "sec-kernel-core",
+    "dependencies": "第一章群与子群定义；第二章逐步给出的双射、同态及正规性证明"
+  },
+  {
+    "id": "simple-faithful-degree",
+    "kind": "单群的最小指数工具；不是新的分类结果",
+    "parameter": "非平凡有限单群；一般群反例V4",
+    "object": "单群的 μ(G)=d(G) 与阶乘整除下界",
+    "evidence": "真子群的陪集核正规且包含于真子群，单性使其平凡；任意忠实作用取非单点轨道给μ≤d，最小指数作用给d≤μ。由嵌入和拉格朗日得|G|整除μ(G)!；V4的μ=2,d=4说明单性假设的作用。未证明或发布A5单性。",
+    "status": "proved",
+    "chapter": "chapters/coset-actions.qmd",
+    "anchor": "sec-mu-equals-d",
+    "dependencies": "本章轨道—稳定子、核正规与拉格朗日；第一章单群定义；核心结论不依赖外部分类定理"
   }
 ]

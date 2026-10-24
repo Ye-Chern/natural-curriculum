@@ -1,36 +1,32 @@
-# 研究与交接状态
+# 当前研究与教材入口
 
-目标：完成可复现的本地与 Codespaces 工作环境、可运行的 Quarto HTML 教材、循环群首章、原生 JS/SVG 实验及 GitHub Actions/Pages。只为已完成的内容增长导航，不预设全书目录。
+更新：2026-10-24（Asia/Singapore）。本轮教材分支 `textbook/coset-actions`，基于 main `85d9af7`。
 
-## 当前工作
+## 已完成的第二章
 
-- 2026-10-20（Asia/Singapore）：已读取原始 README、AGENTS；主工作区 `D:/work2/natural-curriculum`。
-- 工程采用 Quarto 1.10.19、Python 3.12 标准库、Node 24；没有前端运行时框架。Playwright 只用于开发验收。
-- JSON 保存极小事件索引，避免为了读取元数据增加 YAML 运行依赖。生成导航和索引页；未证明事件不进入导航。
-- 数学基础：带余除法与整数良序；Bézout 引理在正文证明；不把有限计算当一般证明。
-- 用户授权 GPT-6 Luna 与 Gemini 独立审阅；审阅意见由 Angle0 检查整合。它们不是正式的外部同行评议，也不能替代真实初学者试读。
+[把子群变成位置](../chapters/coset-actions.qmd)从第一章 C₁₂ 的四个陪集出发，重证陪集划分、拉格朗日定理、左乘良定义、轨道—稳定子、传递作用的陪集模型、核与核心、单群忠实性、μ=d 以及阶乘整除下界。九道练习附答案；五点生成群只是下一次探索的问题，没有提前发布 A₅ 单性。
 
-## 已做的审读与修正
+[陪集舞台](../experiments/coset-stage.html)独立运行，比较 C₆ 与 S₃ 的三点作用。正文与独立页面均有静态说明，控件支持键盘。两种模型的陪集成员、复合方向、轨道、稳定子与核有独立有限核对。
 
-- GPT-6 Luna 逐句检查首章后，补充一般群左陪集定义与有限循环群同构说明，明确负数带余除法约定。
-- Gemini 独立提供误猜案例；第二轮按用户建议首句加入 `/boost`，实际读取正文与实现。采纳剩余类措辞、乘逆元的展开与第二圈行走反馈。其第一轮把 Gauss 第 7–8 条说成消去律的建议经核查不符原文，已拒绝；没有引入未经验证的群论史年代断言。
-- 原著核查范围：Gauss 第一节第 1–2、6–7 条的转录；转录依据 1870 全集，初版年份 1801。未逐页校勘原版影印件。两轮模型审读不等于真人初学者试读或外部同行评议。
+数学审读的实际修正与范围见 [独立审读](chapter-two-independent-review.md)及[本轮验收摘要](second-round-review.md)。初学者[试读材料](reader-trial-chapter-two.md)已经准备，**尚无真人试读数据**。
 
-## 验收与当前前沿
+## 本地验收事实
 
-- Windows：Quarto 1.10.19 构建四页成功，站内链接／锚点／资源检查通过；MathJax 与引用已在浏览器核查。
-- Node 算术检查全部通过：25,956 组界面允许参数；独立枚举 n≤12 的所有子集核对子群名单。有限计算只是实现验收，正文另有一般证明。
-- 桌面与手机 14 项浏览器检查全部通过（最终一轮约 1.2 分钟，含第二圈轨迹回归断言）；初轮发现本地 IP 地址被“外链另开窗口”误判，已删除此非必要设置。
-- 测试服务使用独立端口和 Python 标准库。Windows 并发加载暴露默认服务器仅 5 个排队连接而拒绝脚本请求的问题；保留页面脚本异常检查，将测试服务队列改为 128 后完整验收通过。
-- Quarto 自带预览实际启动，章节请求返回 HTTP 200；本机预览入口为 `http://localhost:4202/`。
-- 实现提交：[3d010fa](https://github.com/Ye-Chern/natural-curriculum/commit/3d010faf4e0bcdaf67406b45a3d3507abdac3de8)，已成功推送 `main`。
-- Pages 已通过 API 配置为 Actions 部署。**2026-10-20 本轮交接时，云端尚未验证成功**：[教材构建与部署](https://github.com/Ye-Chern/natural-curriculum/actions/workflows/book.yml)和[容器验收](https://github.com/Ye-Chern/natural-curriculum/actions/workflows/environment.yml)均已触发，仍排队且没有运行步骤。
-- GitHub 官方报告 [Actions、Pages、Webhooks 服务故障](https://www.githubstatus.com/incidents/8tzbpcnl75jp)，明确提示工作流和网站构建可能延迟。作为独立路径，已尝试创建 2 核 Codespace，API 返回 HTTP 429，未创建工作区；未变更计费设置，也未留下运行中的云实例。没有把静态配置或排队当作云端实测通过。
-- 恢复后的第一动作：查看上述两条工作流；若失败，读具体步骤日志并修正；若通过，再访问 Pages 的章节页验证交互、资源路径和引用。无需重新克隆、重写首章或重复已通过的本地验证。
-- 凭据、缓存和副agent原始记录在仓库外，生成的 `_book/` 不入 Git。
+- `python scripts/project.py verify` 全部通过：15项 Node 测试（含原25,956组循环群参数和 n≤12 的独立子群枚举）、4项内容边界测试、固定版本 Quarto 构建、6个 HTML 页面的站内链接／锚点／资源检查、26项桌面／手机浏览器测试。
+- 主整合者检查实际截图：章节中的实验、窄屏数学证明及两个模型的独立页面。MathJax、文献、生成导航、键盘与无脚本阅读已自动核对。
+- PR #1 原工作树上的最小指数冻结记录、Fano 模型重算和9项研究测试通过；这里没有声称重新运行 GAP 扫描。
+- 云端结果按本轮 PR 的最新检查查看；本地通过不等于 Pages 已发布。只有 main 合并后才部署。
 
-## 接下来要回答的数学与教学问题
+## 分支关系与已知研究
 
-1. 找 1–2 位未学近世代数的读者按三段试读；观察群同构插段与 Bézout 引理是否需要拆到可选深入阅读中。
-2. 由已有陪集问题建立群作用：左乘的良定义、作用核、忠实性。先证明工具，再决定哪些最小指数或几何现象值得新增主题。
-3. 仍需人工数学审稿：尤其一般循环群同构的节奏、单性术语与正规子群的首次引入；历史仍需原版影印校对。暂不增加 Fano 空章节。
+[PR #1](https://github.com/Ye-Chern/natural-curriculum/pull/1)在本轮实查时仍为 Draft/Open，HEAD `cf8e766`，未代为合并。其[最小指数研究稿](https://github.com/Ye-Chern/natural-curriculum/blob/cf8e766dd14f784b083f66189cd4e5962896884d/research/minimal-index.md)仍是低次数分类、Fano 结构与 GAP 2…12 扫描的研究入口。本轮教材自己的证明自足，不需要 PR #1 先合并。
+
+两项教材事件使用独立 ID；PR #1 含本原性的研究事件仍留研究层。未来合并的索引与状态处理见 [HELP](../HELP.md#分支交接pr-1-尚未合并)。生成导航只由脚本更新。
+
+PSL₂(8) 的候选证明已在独立分支 `research/psl28-verified` 核查并保存：[完整证明](https://github.com/Ye-Chern/natural-curriculum/blob/research/psl28-verified/research/psl2-8.md)。七点排除明确依赖 A₇ 单性；八点排除以36个 Sylow 7-子群的唯一固定点得到36=8r矛盾。该分支基于 PR #1，未并入教材 PR，未扩大 GAP 范围；一般 PSL₂(q) 家族与四个例外仍待项目内复现。
+
+## 接下来由什么问题推动
+
+先用试读材料收集真实初学者反馈；数学上辨认五点生成群，证明其阶与单性，再判断适合怎样写 A₅。研究上可以继续解释 M12 的11到12缺口，或复现 PSL₂(q) 家族。没有预设此后的全书目录。
+
+第二轮重构的具体出发点见 [design-second-round.md](design-second-round.md)。首轮环境与部署历史保留在 [85d9af7](https://github.com/Ye-Chern/natural-curriculum/blob/85d9af72faed62367c0b0ea8ae79ee04982c6d4e/research/state.md) 和 PR #1；不再把已完成的初始化作为当前待办。

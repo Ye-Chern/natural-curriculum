@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>陪集舞台 · C6 与 S3 的三点作用</title>
+  <meta name="description" content="独立探索两个三点陪集作用，比较轨道、稳定子与作用核。">
+  <link rel="stylesheet" href="../assets/coset-stage.css">
+</head>
+<body>
+<main data-coset-stage>
+  <h1>陪集舞台</h1>
+  <p class="intro">同样三个位置，能否分辨群里的每个操作？先试 C6 中的 3，再切换到三角形的 S3。</p>
+  <p data-loading>交互正在加载；下方的静态实验始终可读。</p>
+  <section data-interactive hidden aria-label="陪集作用实验">
+    <div class="controls">
+      <div class="field"><label for="coset-model">选择舞台</label><select id="coset-model" data-model><option value="c6">C6：六种加法，三个陪集</option><option value="s3">S3：三角形的六种对称</option></select></div>
+      <div class="field"><label for="coset-element">操作 g</label><select id="coset-element" data-element></select></div>
+      <div class="field"><label for="coset-base">观察起点 x</label><select id="coset-base" data-base></select></div>
+    </div>
+    <p class="note">乘积 gh 先做 h 再做 g。换舞台、操作或起点会清空记录。所有控件都可用 Tab、方向键和 Enter 操作。</p>
+    <div class="actions"><button type="button" data-apply>施加一次 g</button><button type="button" data-reset>回到起点</button></div>
+    <div class="stage-layout">
+      <svg viewBox="0 0 330 285" role="img" aria-labelledby="coset-svg-title"></svg>
+      <div class="readout">
+        <p data-status role="status" aria-live="polite" aria-atomic="true"></p>
+        <p data-trace></p>
+        <p data-map></p>
+        <p data-cycle></p>
+        <p class="note">箭头给出所选 g 对每个位置的映射；橙色实心点与文字“当前位置”指示当前落点。</p>
+      </div>
+    </div>
+    <h2>三个位置里装着什么</h2>
+    <ul class="coset-list" data-cosets></ul>
+    <div class="readout">
+      <dl>
+        <dt>整个群的轨道 G·x</dt><dd data-orbit class="set"></dd>
+        <dt>所选起点的稳定子 Gx</dt><dd data-stabilizer class="set"></dd>
+        <dt>整个作用的核</dt><dd data-kernel class="set"></dd>
+      </dl>
+      <p data-faithful></p>
+    </div>
+  </section>
+  <section class="static" aria-labelledby="coset-static-title">
+    <h2 id="coset-static-title">静态实验（无需 JavaScript）</h2>
+    <p><strong>C6：</strong>H={0,3}，A={0,3}，B={1,4}，C={2,5}。加 1 使 A→B→C→A；加 3 固定全部位置。任一起点的全群轨道都是 {A,B,C}，稳定子与作用核都是 {0,3}。因此这个作用不忠实：0 和 3 有相同效果。</p>
+    <p><strong>S3：</strong>置换从右往左复合，H={e,(23)}。三个左陪集 H={e,(23)}、(12)H={(12),(123)}、(13)H={(13),(132)} 分别对应顶点 1、2、3。(12) 交换前两点并固定第三点；(123) 使 1→2→3→1。顶点 1 的稳定子是 {e,(23)}，但整个作用的核只有 {e}，所以作用忠实。</p>
+    <p><strong>别把两种轨道混在一起：</strong>只反复施加 (12)，从顶点 1 只走过 1、2；允许使用 S3 中的所有元素，则能到达 1、2、3。稳定子只要求固定所选起点，作用核要求固定每个位置。</p>
+  </section>
+  <noscript><p>浏览器没有运行 JavaScript。请用上面的三个集合在纸上计算，所有数学说明均保留。</p></noscript>
+</main>
+<script type="module" src="../assets/coset-stage.js"></script>
+</body>
+</html>
