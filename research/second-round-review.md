@@ -27,6 +27,8 @@ PR #1 原研究工作树重新执行 `minimal_index.py --check`、`check_fano.py
 
 云端首次容器验收 [40079379542](https://github.com/Ye-Chern/natural-curriculum/actions/runs/40079379542) 在安装浏览器依赖前因 Yarn APT 源缺少公钥中止，属于此前已出现的环境问题。已读取具体日志，将 Node feature 升至官方 v2、关闭 Yarn 的 APT 安装，并让容器调用 verify 以覆盖同一套检查；修复后的实际结果见 PR 最新运行，不能把首次失败解释为数学测试失败。
 
+实施提交 `2863886` 的云端[教材构建](https://github.com/Ye-Chern/natural-curriculum/actions/runs/40079529202)与[完整容器验收](https://github.com/Ye-Chern/natural-curriculum/actions/runs/40079529253)均通过。主整合者读取两份实际日志，确认都执行了15项 Node、4项 Python 内容测试、六页链接检查以及26项浏览器测试。教材 PR 为 [#2](https://github.com/Ye-Chern/natural-curriculum/pull/2)，仍未合并，不代表正式 Pages 已更新。本段及状态入口是验收后的文档补记，未改数学正文与实验实现。
+
 ## 教学实测与余留事项
 
 [真人试读材料](reader-trial-chapter-two.md)已准备，尚未实测。数学审读、有限计算与浏览器模拟不填作真人反馈。下一步观察陪集从元素变成集合位置、稳定子变成核两个转折，以及允许非传递忠实作用时 μ≤d 的证明是否容易理解。

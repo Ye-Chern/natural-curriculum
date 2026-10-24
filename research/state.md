@@ -1,6 +1,6 @@
 # 当前研究与教材入口
 
-更新：2026-10-24（Asia/Singapore）。本轮教材分支 `textbook/coset-actions`，基于 main `85d9af7`。
+更新：2026-10-24（Asia/Singapore）。本轮[教材 PR #2](https://github.com/Ye-Chern/natural-curriculum/pull/2)，分支 `textbook/coset-actions`，基于 main `85d9af7`。
 
 ## 已完成的第二章
 
@@ -15,7 +15,7 @@
 - `python scripts/project.py verify` 全部通过：15项 Node 测试（含原25,956组循环群参数和 n≤12 的独立子群枚举）、4项内容边界测试、固定版本 Quarto 构建、6个 HTML 页面的站内链接／锚点／资源检查、26项桌面／手机浏览器测试。
 - 主整合者检查实际截图：章节中的实验、窄屏数学证明及两个模型的独立页面。MathJax、文献、生成导航、键盘与无脚本阅读已自动核对。
 - PR #1 原工作树上的最小指数冻结记录、Fano 模型重算和9项研究测试通过；这里没有声称重新运行 GAP 扫描。
-- 云端结果按本轮 PR 的最新检查查看；本地通过不等于 Pages 已发布。只有 main 合并后才部署。
+- 实施提交 `2863886` 的云端[教材验收](https://github.com/Ye-Chern/natural-curriculum/actions/runs/40079529202)与[完整容器验收](https://github.com/Ye-Chern/natural-curriculum/actions/runs/40079529253)均成功；已读实际日志，两边都完成15项数学实现、4项内容、6页链接与26项浏览器检查。容器首次复现的 Yarn 签名问题已修复。后续提交以 PR 最新检查为准；只有 main 合并后才部署 Pages。
 
 ## 分支关系与已知研究
 
